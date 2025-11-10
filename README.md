@@ -100,10 +100,32 @@ License and authorship
 Add your preferred license and authorship notes when you create a new
 project from this template.
 
-----
+Included Python packages
+------------------------
+This template declares a small set of Python dependencies in `pyproject.toml` that are commonly useful for analytics projects. Below is a short description of each package and how the Companies House Analytics teams typically use them.
 
-If you want, I can: move a few configuration files into `.config/` and
-add wrapper scripts that call tools with the new paths, then update
-this README with the exact commands. Just tell me which configs you'd
-like relocated.
+- `matplotlib` — the foundational plotting library for Python. Use it for creating static, publication-quality charts and for low-level control when building custom visualisations. It's often used alongside `pandas` or `numpy` when exporting figures for reports.
+
+- `numpy` — core numerical computing library. Provides fast, memory-efficient arrays and mathematical functions. Many data-processing and scientific packages (including `pandas` and `polars`) build on `numpy` arrays; expect to use it for vectorised computations and small numerical utilities.
+
+- `pandas` — the standard tabular data library in Python. Use `pandas` DataFrame/Series for most ETL, data-cleaning, aggregation, and exploratory analysis tasks. It's the go-to tool for working with CSV/Parquet/Excel and for quick ad-hoc joins, group-bys, and resampling.
+
+- `polars` — an alternative, high-performance dataframe library with a focus on speed and low memory use. Useful for larger datasets or for workflows where parallel execution and query-like expressions give better throughput than `pandas`. Projects may choose `pandas` for familiarity or `polars` for performance-critical pipelines.
+
+- `pylint` — a static code analysis tool used to enforce coding standards and catch common bugs. Use it in development and CI to keep code readable and consistent with project conventions.
+
+- `pytest` — the testing framework used for unit and integration tests. Use `pytest` to write fast, clear tests for data transformations, utilities, and components of analytics pipelines.
+
+- `seaborn` — a high-level statistical plotting library built on top of `matplotlib`. Use `seaborn` for quick, attractive statistical visualisations (distribution plots, regression plots, categorical comparisons) during EDA and reporting.
+
+- `snowflake-connector-python[pandas,secure-local-storage]` — Snowflake's Python connector with optional extras. The `pandas` extra adds helpers for loading query results directly into `pandas` DataFrames; `secure-local-storage` enables optional secure caching for authentication artifacts. Use this connector when interacting with Snowflake data warehouses from scripts and notebooks.
+
+Notes and guidance
+------------------
+- The template pins a minimal set of developer and runtime tools. Add or remove packages to match your project's needs.
+- For large data processing jobs prefer using `polars` or dedicated processing engines, and reserve `pandas` for analysis and smaller ETL steps where its API convenience is valuable.
+- Keep `pylint` and `pytest` in CI to maintain code quality and prevent regressions during collaboration.
+
+
+
 
