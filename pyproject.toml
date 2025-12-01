@@ -1,0 +1,16 @@
+[project]
+name = "ch-analytics-repository-template"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.11.9"
+dependencies = [
+    "matplotlib>=3.10.7",
+    "numpy>=2.3.4",
+    "pandas>=2.3.3",
+    "polars>=1.35.1",
+    "pylint>=4.0.2",
+    "pytest>=8.4.2",
+    "seaborn>=0.13.2",
+    "snowflake-connector-python[pandas,secure-local-storage]>=4.0.0",
+]
