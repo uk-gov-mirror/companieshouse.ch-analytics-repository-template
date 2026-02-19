@@ -1,5 +1,5 @@
 [project]
-name = "ch-analytics-repository-template"
+name = "{{cookiecutter.project_slug}}"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -9,6 +9,7 @@ dependencies = [
     "matplotlib>=3.10.7",
     "numpy>=2.3.4",
     "pandas>=2.3.3",
+    "plotly>=6.5.2",
     "polars>=1.35.1",
     "pylint>=4.0.2",
     "pytest>=8.4.2",

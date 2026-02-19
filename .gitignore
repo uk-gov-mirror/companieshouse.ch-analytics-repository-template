@@ -35,6 +35,7 @@ venv/
 ENV/
 env/
 uv.lock
+.python-version
 
 # Pyre type checker
 .pyre/
