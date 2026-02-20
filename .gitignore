@@ -34,6 +34,8 @@ coverage.xml
 venv/
 ENV/
 env/
+uv.lock
+.python-version
 
 # Pyre type checker
 .pyre/
@@ -64,6 +66,7 @@ __RData__/
 # Common env/config files that should not be committed
 .env
 config.ini
+!init-config/{{cookiecutter.project_slug}}/.env
 
 ### Misc
 # OS files
