@@ -19,6 +19,33 @@ Key goals
 - Keep the repository tidy while remaining explicit about the files and
 	tools projects often need.
 
+Quickstart — creating the Python environment
+-------------------------------------------
+This project uses the `uv` tool for environment management and cookiecutter
+for intial project setup.
+
+To intially create the pyproject.toml file if it is not already present
+(this is not necessary if you are not the first user of the repository)
+run the following commands in PowerShell from the repository root:
+```powershell
+cookiecutter init-config --output-dir .. --overwrite-if-exists --no-input "project_slug=$(Split-Path -Leaf (Get-Location))"
+```
+
+To create or update the python environment to match the one specified
+in the pyproject.toml file
+run the following commands in PowerShell from the repository root:
+
+```powershell
+uv sync
+```
+
+Notes:
+- `uv sync` will create or update a local environment according to the
+	lockfile. If you prefer to use venv, conda, or another tool, adapt
+	the workflow to match your team's standard.
+- Ensure your terminal's Python is compatible with the `requires-python`
+	constraint in `pyproject.toml` (the template pins `==3.11.9`).
+
 Repository layout
 -----------------
 - `.github/` — CI/workflow configuration
