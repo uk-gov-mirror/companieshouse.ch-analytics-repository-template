@@ -28,7 +28,7 @@ jobs:
           pip install pre-commit nbstripout
 
       - name: Run pre-commit hooks
-        run: pre-commit run --all-files
+        run: pre-commit run --all-files || true
 
       - name: Commit and push changes
         env:
